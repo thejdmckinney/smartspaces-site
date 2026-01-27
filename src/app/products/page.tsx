@@ -3,10 +3,11 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
-import { ChevronDown, Home, Wifi, Lightbulb, Shield, Thermometer, Zap, CheckCircle2, Award } from 'lucide-react'
+import { ChevronDown, Home, Wifi, Lightbulb, Shield, Thermometer, Zap, CheckCircle2, Award, Menu, X } from 'lucide-react'
 
 export default function ProductsPage() {
   const [isServicesOpen, setIsServicesOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const coreProducts = [
     {
@@ -213,13 +214,45 @@ export default function ProductsPage() {
               Contact Us
             </Link>
           </div>
+          
+          {/* Desktop CTA */}
           <Link 
             href="/contact"
-            className="px-6 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full text-white font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all"
+            className="hidden md:block px-6 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full text-white font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all"
           >
             Get Started
           </Link>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden p-2 text-slate-300 hover:text-blue-400 transition-colors"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </nav>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-slate-950/98 backdrop-blur-md border-t border-blue-500/20">
+            <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">
+              <Link href="/" className="block px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/30 rounded-lg transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+              <div className="space-y-1">
+                <div className="px-4 py-2 text-slate-400 text-xs font-semibold uppercase tracking-wider">Services</div>
+                <Link href="/services/home-automation" className="block px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/30 rounded-lg transition-colors text-sm" onClick={() => setIsMobileMenuOpen(false)}>Home Automation</Link>
+                <Link href="/services/smart-lighting" className="block px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/30 rounded-lg transition-colors text-sm" onClick={() => setIsMobileMenuOpen(false)}>Smart Lighting</Link>
+                <Link href="/services/security-systems" className="block px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/30 rounded-lg transition-colors text-sm" onClick={() => setIsMobileMenuOpen(false)}>Security Systems</Link>
+                <Link href="/services/integration" className="block px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/30 rounded-lg transition-colors text-sm" onClick={() => setIsMobileMenuOpen(false)}>Integration</Link>
+                <Link href="/services/ev-installation" className="block px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/30 rounded-lg transition-colors text-sm" onClick={() => setIsMobileMenuOpen(false)}>EV Installation</Link>
+              </div>
+              <Link href="/pricing" className="block px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/30 rounded-lg transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Pricing</Link>
+              <Link href="/products" className="block px-4 py-3 text-blue-400 font-medium bg-slate-800/50 rounded-lg" onClick={() => setIsMobileMenuOpen(false)}>Products</Link>
+              <Link href="/contact" className="block px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/30 rounded-lg transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
+              <Link href="/contact" className="block mx-2 mt-4 px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full text-white font-medium text-center" onClick={() => setIsMobileMenuOpen(false)}>Get Started</Link>
+            </div>
+          </div>
+        )}
       </header>
 
       {/* Hero Section */}

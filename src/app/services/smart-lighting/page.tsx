@@ -2,11 +2,12 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowLeft, Lightbulb, Sun, Moon, Palette, Clock, Smartphone, ChevronDown } from 'lucide-react'
+import { ArrowLeft, Lightbulb, Sun, Moon, Palette, Clock, Smartphone, ChevronDown, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 
 export default function SmartLightingPage() {
   const [isServicesOpen, setIsServicesOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
@@ -81,13 +82,105 @@ export default function SmartLightingPage() {
               Contact Us
             </Link>
           </div>
+          
+          {/* Desktop Get Started Button */}
           <Link 
             href="/contact"
-            className="px-6 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full text-white font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all"
+            className="hidden md:block px-6 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full text-white font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all"
           >
             Get Started
           </Link>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden text-slate-300 hover:text-blue-400 transition-colors"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </nav>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden absolute top-20 left-0 right-0 bg-slate-900/95 backdrop-blur-sm border-b border-slate-800 shadow-xl">
+            <div className="flex flex-col p-4 space-y-4">
+              <Link 
+                href="/" 
+                className="text-slate-300 hover:text-blue-400 transition-colors py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <div className="border-t border-slate-800 pt-2">
+                <div className="text-slate-400 text-sm font-medium mb-2">Services</div>
+                <Link 
+                  href="/services/home-automation" 
+                  className="text-slate-300 hover:text-blue-400 transition-colors py-2 px-3 block"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Home Automation
+                </Link>
+                <Link 
+                  href="/services/smart-lighting" 
+                  className="text-blue-400 font-medium bg-slate-800/50 py-2 px-3 rounded block"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Smart Lighting
+                </Link>
+                <Link 
+                  href="/services/security-systems" 
+                  className="text-slate-300 hover:text-blue-400 transition-colors py-2 px-3 block"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Security Systems
+                </Link>
+                <Link 
+                  href="/services/integration" 
+                  className="text-slate-300 hover:text-blue-400 transition-colors py-2 px-3 block"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Integration & Network Health
+                </Link>
+                <Link 
+                  href="/services/ev-installation" 
+                  className="text-slate-300 hover:text-blue-400 transition-colors py-2 px-3 block"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  EV Charger Installation
+                </Link>
+              </div>
+              <Link 
+                href="/pricing" 
+                className="text-slate-300 hover:text-blue-400 transition-colors py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Pricing
+              </Link>
+              <Link 
+                href="/products" 
+                className="text-slate-300 hover:text-blue-400 transition-colors py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Products
+              </Link>
+              <Link 
+                href="/contact" 
+                className="text-slate-300 hover:text-blue-400 transition-colors py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact Us
+              </Link>
+              <Link 
+                href="/contact"
+                className="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full text-white font-medium text-center mt-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Get Started
+              </Link>
+            </div>
+          </div>
+        )}
       </header>
 
       {/* Hero Section */}
