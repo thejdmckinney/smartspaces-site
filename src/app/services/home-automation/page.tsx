@@ -2,19 +2,13 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Home, Lightbulb, Shield, Smartphone, ChevronDown } from 'lucide-react'
+import { ArrowLeft, Home, Smartphone, Lightbulb, Thermometer, Music, Shield, ChevronDown } from 'lucide-react'
 import { useState } from 'react'
-import Head from 'next/head'
 
-export default function HomePage() {
+export default function HomeAutomationPage() {
   const [isServicesOpen, setIsServicesOpen] = useState(false)
+  
   return (
-    <>
-      <Head>
-        <title>SmartSpaces DFW - Professional Smart Home Installation | Dallas-Fort Worth</title>
-        <meta name="description" content="Expert smart home installation in Dallas-Fort Worth. Network health first approach for reliable home automation, security systems, smart lighting & EV charging throughout DFW Metroplex." />
-        <link rel="canonical" href="https://smartspacesdfw.com" />
-      </Head>
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
       {/* Header */}
       <header className="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-blue-500/20">
@@ -46,7 +40,7 @@ export default function HomePage() {
                 <div className="absolute top-full left-0 mt-2 w-64 bg-slate-900/95 backdrop-blur-md border border-blue-500/30 rounded-xl shadow-xl py-2 z-50">
                   <Link 
                     href="/services/home-automation" 
-                    className="block px-6 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/50 transition-colors"
+                    className="block px-6 py-3 text-blue-400 bg-slate-800/50 font-medium"
                   >
                     Home Automation
                   </Link>
@@ -99,59 +93,46 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6">
         <div className="max-w-7xl mx-auto">
+          <Link href="/" className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 mb-8">
+            <ArrowLeft className="w-5 h-5" />
+            Back to Home
+          </Link>
+          
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-                Smart Home Systems That{' '}
+              <div className="inline-flex items-center gap-3 bg-blue-500/10 border border-blue-500/30 rounded-full px-6 py-2 mb-6">
+                <Home className="w-5 h-5 text-blue-400" />
+                <span className="text-blue-400 font-medium">Home Automation</span>
+              </div>
+              
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+                Automation That{' '}
                 <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                  Actually Work Together
+                  Actually Works
                 </span>
               </h1>
+              
               <p className="text-xl text-slate-300 mb-8 leading-relaxed">
-                Tired of devices that won't connect, Wi-Fi dead zones, and DIY setups that break? 
-                We design and install reliable smart home systems backed by professional support.
+                No more devices that lose connection or automations that randomly stop working. 
+                We design reliable home automation systems built on a solid network foundation.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
-                  href="#contact"
-                  className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full text-white font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all inline-flex items-center justify-center gap-2"
-                >
-                  Start Your Project
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-                <Link 
-                  href="#services"
-                  className="px-8 py-4 bg-slate-800/50 backdrop-blur-sm border border-blue-500/30 rounded-full text-white font-semibold hover:bg-slate-800 transition-all inline-flex items-center justify-center gap-2"
-                >
-                  Explore Services
-                </Link>
-              </div>
+              
+              <Link 
+                href="/#contact"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full text-white font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all"
+              >
+                Get Started
+              </Link>
             </div>
+            
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-3xl blur-3xl opacity-20"></div>
               <div className="relative bg-slate-800/50 backdrop-blur-sm border border-blue-500/30 rounded-3xl p-8">
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="bg-slate-900/50 rounded-2xl p-6 border border-blue-500/20">
-                    <Home className="w-12 h-12 text-blue-400 mb-4" />
-                    <h3 className="text-white font-semibold mb-2">Reliable Systems</h3>
-                    <p className="text-slate-400 text-sm">No more conflicts or crashes</p>
-                  </div>
-                  <div className="bg-slate-900/50 rounded-2xl p-6 border border-cyan-500/20">
-                    <Lightbulb className="w-12 h-12 text-cyan-400 mb-4" />
-                    <h3 className="text-white font-semibold mb-2">True Integration</h3>
-                    <p className="text-slate-400 text-sm">Everything works together</p>
-                  </div>
-                  <div className="bg-slate-900/50 rounded-2xl p-6 border border-purple-500/20">
-                    <Shield className="w-12 h-12 text-purple-400 mb-4" />
-                    <h3 className="text-white font-semibold mb-2">Network Health</h3>
-                    <p className="text-slate-400 text-sm">Strong Wi-Fi foundation</p>
-                  </div>
-                  <div className="bg-slate-900/50 rounded-2xl p-6 border border-emerald-500/20">
-                    <Smartphone className="w-12 h-12 text-emerald-400 mb-4" />
-                    <h3 className="text-white font-semibold mb-2">Ongoing Support</h3>
-                    <p className="text-slate-400 text-sm">We're here when you need us</p>
-                  </div>
-                </div>
+                <Home className="w-24 h-24 text-blue-400 mx-auto mb-6" />
+                <h3 className="text-2xl font-bold text-white text-center mb-4">Reliable Systems</h3>
+                <p className="text-slate-400 text-center">
+                  Professional design and integration that keeps working, day after day
+                </p>
               </div>
             </div>
           </div>
@@ -159,81 +140,90 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section id="services" className="py-20 px-6">
+      <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Why Choose SmartSpaces DFW
-            </h2>
-            <p className="text-xl text-slate-400">
-              We're not selling gadgets—we're delivering systems that actually work
-            </p>
-          </div>
+          <h2 className="text-4xl font-bold text-white text-center mb-16">
+            What We Automate
+          </h2>
+          
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: 'Network Health First',
-                description: 'Most smart homes fail because of poor Wi-Fi. We evaluate, optimize, and install enterprise-grade mesh systems so your devices actually stay connected.',
-                icon: Smartphone,
-                color: 'blue'
+                icon: Lightbulb,
+                title: 'Lighting Control',
+                description: 'Automated lighting scenes, schedules, and voice control integration'
               },
               {
-                title: 'True Integration',
-                description: 'No more juggling apps or devices that don\'t talk to each other. We design unified systems where everything works together seamlessly.',
-                icon: Home,
-                color: 'purple'
+                icon: Thermometer,
+                title: 'Climate Control',
+                description: 'Smart thermostats with learning capabilities and remote access'
               },
               {
-                title: 'Ongoing Support',
-                description: 'Annual system checkups, priority support, and seasonal automation tweaks. We\'re here for the long haul, not just the installation.',
+                icon: Music,
+                title: 'Audio/Video',
+                description: 'Whole-home entertainment systems with multi-room audio'
+              },
+              {
                 icon: Shield,
-                color: 'cyan'
+                title: 'Security Integration',
+                description: 'Seamless integration with security cameras and alarm systems'
+              },
+              {
+                icon: Smartphone,
+                title: 'Mobile Control',
+                description: 'Control everything from your smartphone, anywhere in the world'
+              },
+              {
+                icon: Home,
+                title: 'Voice Assistant',
+                description: 'Works with Alexa, Google Home, and Apple HomeKit'
               }
-            ].map((service, index) => (
+            ].map((feature, index) => (
               <div 
                 key={index}
-                className="bg-slate-800/30 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 hover:border-blue-500/40 transition-all hover:transform hover:scale-105"
+                className="bg-slate-800/30 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 hover:border-blue-500/40 transition-all"
               >
-                <service.icon className={`w-16 h-16 text-${service.color}-400 mb-6`} />
-                <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
-                <p className="text-slate-400 leading-relaxed">{service.description}</p>
+                <feature.icon className="w-12 h-12 text-blue-400 mb-4" />
+                <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                <p className="text-slate-400">{feature.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* The Problem Section */}
+      {/* Benefits Section */}
       <section className="py-20 px-6 bg-slate-900/30">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold text-white text-center mb-12">
-            Tired of Smart Home Frustration?
+            Why Choose Smart Home Automation?
           </h2>
+          
           <div className="space-y-6">
             {[
               {
-                title: 'Devices That Don\'t Talk',
-                description: 'You bought the latest gadgets, but they won\'t connect or work together'
+                title: 'Energy Efficiency',
+                description: 'Save up to 30% on energy bills with intelligent automation and scheduling'
               },
               {
-                title: 'DIY Setups That Break',
-                description: 'Your smart home worked last week, but now half of it is offline'
+                title: 'Enhanced Security',
+                description: 'Monitor and control your home security from anywhere in the world'
               },
               {
-                title: 'Wi-Fi Dead Zones',
-                description: 'Devices drop connection constantly because your network can\'t handle the load'
+                title: 'Convenience',
+                description: 'Automate daily routines and control everything with a single tap or voice command'
               },
               {
-                title: 'No One to Call',
-                description: 'When something breaks, you\'re stuck Googling and troubleshooting alone'
+                title: 'Increased Home Value',
+                description: 'Smart home technology can increase your property value by up to 5%'
               }
-            ].map((problem, index) => (
+            ].map((benefit, index) => (
               <div 
                 key={index}
-                className="bg-slate-800/50 backdrop-blur-sm border border-red-500/20 rounded-xl p-6"
+                className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-xl p-6"
               >
-                <h3 className="text-xl font-bold text-white mb-2">{problem.title}</h3>
-                <p className="text-slate-400">{problem.description}</p>
+                <h3 className="text-xl font-bold text-white mb-2">{benefit.title}</h3>
+                <p className="text-slate-400">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -245,10 +235,10 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-blue-500 to-cyan-500 rounded-3xl p-12">
             <h2 className="text-4xl font-bold text-white mb-6">
-              Ready for a Smart Home That Actually Works?
+              Ready to Automate Your Home?
             </h2>
             <p className="text-xl text-white/90 mb-8">
-              Get a free network assessment and discover why reliability starts with proper Wi-Fi.
+              Let's discuss your home automation needs and create a custom solution.
             </p>
             <Link 
               href="https://calendly.com/jeremy-leveragelab/virtual-or-on-site-consultation"
@@ -257,7 +247,6 @@ export default function HomePage() {
               className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 rounded-full font-semibold hover:shadow-xl transition-all"
             >
               Schedule Consultation
-              <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
         </div>
@@ -279,7 +268,7 @@ export default function HomePage() {
             </div>
           </div>
           <p className="text-slate-400 mb-6">
-            Reliable smart home systems. Professional integration. Ongoing support.
+            Making homes smarter, one installation at a time.
           </p>
           <p className="text-slate-500 text-sm">
             © {new Date().getFullYear()} SmartSpaces DFW. All rights reserved.
@@ -287,6 +276,5 @@ export default function HomePage() {
         </div>
       </footer>
     </div>
-    </>
   )
 }
