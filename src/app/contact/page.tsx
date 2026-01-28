@@ -65,37 +65,39 @@ export default function ContactPage() {
               </button>
               
               {isServicesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-slate-900/95 backdrop-blur-md border border-blue-500/30 rounded-xl shadow-xl py-2 z-50">
-                  <Link 
-                    href="/services/home-automation" 
-                    className="block px-6 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/50 transition-colors"
-                  >
-                    Home Automation
-                  </Link>
-                  <Link 
-                    href="/services/smart-lighting" 
-                    className="block px-6 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/50 transition-colors"
-                  >
-                    Smart Lighting
-                  </Link>
-                  <Link 
-                    href="/services/security-systems" 
-                    className="block px-6 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/50 transition-colors"
-                  >
-                    Security Systems
-                  </Link>
-                  <Link 
-                    href="/services/integration" 
-                    className="block px-6 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/50 transition-colors"
-                  >
-                    Integration
-                  </Link>
-                  <Link 
-                    href="/services/ev-installation" 
-                    className="block px-6 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/50 transition-colors"
-                  >
-                    EV Installation
-                  </Link>
+                <div className="absolute top-full left-0 pt-2 z-50">
+                  <div className="w-64 bg-slate-900/95 backdrop-blur-md border border-blue-500/30 rounded-xl shadow-xl py-2">
+                    <Link 
+                      href="/services/home-automation" 
+                      className="block px-6 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/50 transition-colors"
+                    >
+                      Home Automation
+                    </Link>
+                    <Link 
+                      href="/services/smart-lighting" 
+                      className="block px-6 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/50 transition-colors"
+                    >
+                      Smart Lighting
+                    </Link>
+                    <Link 
+                      href="/services/security-systems" 
+                      className="block px-6 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/50 transition-colors"
+                    >
+                      Security Systems
+                    </Link>
+                    <Link 
+                      href="/services/integration" 
+                      className="block px-6 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/50 transition-colors"
+                    >
+                      Integration
+                    </Link>
+                    <Link 
+                      href="/services/ev-installation" 
+                      className="block px-6 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/50 transition-colors"
+                    >
+                      EV Installation
+                    </Link>
+                  </div>
                 </div>
               )}
             </div>
