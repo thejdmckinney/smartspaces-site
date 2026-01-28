@@ -220,12 +220,14 @@ export default function EVInstallationPage() {
             
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 rounded-3xl blur-3xl opacity-20"></div>
-              <div className="relative bg-slate-800/50 backdrop-blur-sm border border-green-500/30 rounded-3xl p-8">
-                <Car className="w-24 h-24 text-green-400 mx-auto mb-6" />
-                <h3 className="text-2xl font-bold text-white text-center mb-4">Smart EV Charging</h3>
-                <p className="text-slate-400 text-center">
-                  Fast, efficient charging at home with intelligent power management
-                </p>
+              <div className="relative rounded-3xl overflow-hidden">
+                <Image 
+                  src="/smart-spaces-ev-charging.png" 
+                  alt="EV Charger Installation" 
+                  width={600} 
+                  height={400}
+                  className="w-full h-auto"
+                />
               </div>
             </div>
           </div>

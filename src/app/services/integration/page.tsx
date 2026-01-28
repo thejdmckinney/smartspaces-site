@@ -220,12 +220,14 @@ export default function IntegrationPage() {
             
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-3xl blur-3xl opacity-20"></div>
-              <div className="relative bg-slate-800/50 backdrop-blur-sm border border-emerald-500/30 rounded-3xl p-8">
-                <Smartphone className="w-24 h-24 text-emerald-400 mx-auto mb-6" />
-                <h3 className="text-2xl font-bold text-white text-center mb-4">Network-First Approach</h3>
-                <p className="text-slate-400 text-center">
-                  Strong Wi-Fi is the foundation. We optimize your network before adding any devices.
-                </p>
+              <div className="relative rounded-3xl overflow-hidden">
+                <Image 
+                  src="/smart-integration.png" 
+                  alt="Smart Home Integration & Network Health" 
+                  width={600} 
+                  height={400}
+                  className="w-full h-auto"
+                />
               </div>
             </div>
           </div>

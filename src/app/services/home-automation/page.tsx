@@ -220,12 +220,14 @@ export default function HomeAutomationPage() {
             
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-3xl blur-3xl opacity-20"></div>
-              <div className="relative bg-slate-800/50 backdrop-blur-sm border border-blue-500/30 rounded-3xl p-8">
-                <Home className="w-24 h-24 text-blue-400 mx-auto mb-6" />
-                <h3 className="text-2xl font-bold text-white text-center mb-4">Reliable Systems</h3>
-                <p className="text-slate-400 text-center">
-                  Professional design and integration that keeps working, day after day
-                </p>
+              <div className="relative rounded-3xl overflow-hidden">
+                <Image 
+                  src="/smart-spaces-home-automation.png" 
+                  alt="Home Automation Systems" 
+                  width={600} 
+                  height={400}
+                  className="w-full h-auto"
+                />
               </div>
             </div>
           </div>
