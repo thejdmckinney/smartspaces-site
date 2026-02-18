@@ -12,11 +12,11 @@ export default function PricingPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
       {/* Header */}
-      <header className="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-blue-500/20">
+      <header className="fixed top-0 w-full z-50 bg-slate-100/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center">
             <Image 
-              src="/smart-spaces-logox2.png" 
+              src="/new-smartspaces-logo.png" 
               alt="SmartSpaces DFW Logo" 
               width={150} 
               height={150}
@@ -24,7 +24,7 @@ export default function PricingPage() {
             />
           </Link>
           <div className="hidden md:flex gap-8 items-center">
-            <Link href="/" className="text-slate-300 hover:text-blue-400 transition-colors">
+            <Link href="/" className="text-slate-700 hover:text-blue-600 transition-colors">
               Home
             </Link>
             <div 
@@ -32,41 +32,41 @@ export default function PricingPage() {
               onMouseEnter={() => setIsServicesOpen(true)}
               onMouseLeave={() => setIsServicesOpen(false)}
             >
-              <button className="text-slate-300 hover:text-blue-400 transition-colors flex items-center gap-1">
+              <button className="text-slate-700 hover:text-blue-600 transition-colors flex items-center gap-1">
                 Services
                 <ChevronDown className="w-4 h-4" />
               </button>
               
               {isServicesOpen && (
                 <div className="absolute top-full left-0 pt-2 z-50">
-                  <div className="w-64 bg-slate-900/95 backdrop-blur-md border border-blue-500/30 rounded-xl shadow-xl py-2">
+                  <div className="w-64 bg-white border border-slate-200 rounded-xl shadow-xl py-2">
                     <Link 
                       href="/services/home-automation" 
-                      className="block px-6 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/50 transition-colors"
+                      className="block px-6 py-3 text-slate-700 hover:text-blue-600 hover:bg-slate-50 transition-colors"
                     >
                       Home Automation
                     </Link>
                     <Link 
                       href="/services/smart-lighting" 
-                      className="block px-6 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/50 transition-colors"
+                      className="block px-6 py-3 text-slate-700 hover:text-blue-600 hover:bg-slate-50 transition-colors"
                     >
                       Smart Lighting
                     </Link>
                     <Link 
                       href="/services/security-systems" 
-                      className="block px-6 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/50 transition-colors"
+                      className="block px-6 py-3 text-slate-700 hover:text-blue-600 hover:bg-slate-50 transition-colors"
                     >
                       Security Systems
                     </Link>
                     <Link 
                       href="/services/integration" 
-                      className="block px-6 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/50 transition-colors"
+                      className="block px-6 py-3 text-slate-700 hover:text-blue-600 hover:bg-slate-50 transition-colors"
                     >
                       Integration
                     </Link>
                     <Link 
                       href="/services/ev-installation" 
-                      className="block px-6 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/50 transition-colors"
+                      className="block px-6 py-3 text-slate-700 hover:text-blue-600 hover:bg-slate-50 transition-colors"
                     >
                       EV Installation
                     </Link>
@@ -77,10 +77,10 @@ export default function PricingPage() {
             <Link href="/pricing" className="text-blue-400 font-medium">
               Pricing
             </Link>
-            <Link href="/products" className="text-slate-300 hover:text-blue-400 transition-colors">
+            <Link href="/products" className="text-slate-700 hover:text-blue-600 transition-colors">
               Products
             </Link>
-            <Link href="/contact" className="text-slate-300 hover:text-blue-400 transition-colors">
+            <Link href="/contact" className="text-slate-700 hover:text-blue-600 transition-colors">
               Contact Us
             </Link>
           </div>
@@ -96,7 +96,7 @@ export default function PricingPage() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-slate-300 hover:text-blue-400 transition-colors"
+            className="md:hidden p-2 text-slate-700 hover:text-blue-600 transition-colors"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -107,18 +107,18 @@ export default function PricingPage() {
         {isMobileMenuOpen && (
           <div className="md:hidden bg-slate-950/98 backdrop-blur-md border-t border-blue-500/20">
             <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">
-              <Link href="/" className="block px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/30 rounded-lg transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+              <Link href="/" className="block px-4 py-3 text-slate-700 hover:text-blue-600 hover:bg-slate-800/30 rounded-lg transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
               <div className="space-y-1">
                 <div className="px-4 py-2 text-slate-400 text-xs font-semibold uppercase tracking-wider">Services</div>
-                <Link href="/services/home-automation" className="block px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/30 rounded-lg transition-colors text-sm" onClick={() => setIsMobileMenuOpen(false)}>Home Automation</Link>
-                <Link href="/services/smart-lighting" className="block px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/30 rounded-lg transition-colors text-sm" onClick={() => setIsMobileMenuOpen(false)}>Smart Lighting</Link>
-                <Link href="/services/security-systems" className="block px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/30 rounded-lg transition-colors text-sm" onClick={() => setIsMobileMenuOpen(false)}>Security Systems</Link>
-                <Link href="/services/integration" className="block px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/30 rounded-lg transition-colors text-sm" onClick={() => setIsMobileMenuOpen(false)}>Integration</Link>
-                <Link href="/services/ev-installation" className="block px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/30 rounded-lg transition-colors text-sm" onClick={() => setIsMobileMenuOpen(false)}>EV Installation</Link>
+                <Link href="/services/home-automation" className="block px-4 py-3 text-slate-700 hover:text-blue-600 hover:bg-slate-800/30 rounded-lg transition-colors text-sm" onClick={() => setIsMobileMenuOpen(false)}>Home Automation</Link>
+                <Link href="/services/smart-lighting" className="block px-4 py-3 text-slate-700 hover:text-blue-600 hover:bg-slate-800/30 rounded-lg transition-colors text-sm" onClick={() => setIsMobileMenuOpen(false)}>Smart Lighting</Link>
+                <Link href="/services/security-systems" className="block px-4 py-3 text-slate-700 hover:text-blue-600 hover:bg-slate-800/30 rounded-lg transition-colors text-sm" onClick={() => setIsMobileMenuOpen(false)}>Security Systems</Link>
+                <Link href="/services/integration" className="block px-4 py-3 text-slate-700 hover:text-blue-600 hover:bg-slate-800/30 rounded-lg transition-colors text-sm" onClick={() => setIsMobileMenuOpen(false)}>Integration</Link>
+                <Link href="/services/ev-installation" className="block px-4 py-3 text-slate-700 hover:text-blue-600 hover:bg-slate-800/30 rounded-lg transition-colors text-sm" onClick={() => setIsMobileMenuOpen(false)}>EV Installation</Link>
               </div>
               <Link href="/pricing" className="block px-4 py-3 text-blue-400 font-medium bg-slate-800/50 rounded-lg" onClick={() => setIsMobileMenuOpen(false)}>Pricing</Link>
-              <Link href="/products" className="block px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/30 rounded-lg transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Products</Link>
-              <Link href="/contact" className="block px-4 py-3 text-slate-300 hover:text-blue-400 hover:bg-slate-800/30 rounded-lg transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
+              <Link href="/products" className="block px-4 py-3 text-slate-700 hover:text-blue-600 hover:bg-slate-800/30 rounded-lg transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Products</Link>
+              <Link href="/contact" className="block px-4 py-3 text-slate-700 hover:text-blue-600 hover:bg-slate-800/30 rounded-lg transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
               <Link href="/contact" className="block mx-2 mt-4 px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full text-white font-medium text-center" onClick={() => setIsMobileMenuOpen(false)}>Get Started</Link>
             </div>
           </div>
@@ -384,7 +384,7 @@ export default function PricingPage() {
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
             <Image 
-              src="/smart-spaces-logox2.png" 
+              src="/new-smartspaces-logo.png" 
               alt="SmartSpaces DFW Logo" 
               width={60} 
               height={60}
