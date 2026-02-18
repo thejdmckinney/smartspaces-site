@@ -110,6 +110,13 @@ export default function ContactPage() {
             <Link href="/contact" className="text-blue-400 font-medium">
               Contact
             </Link>
+            <a 
+              href="tel:+16824662130" 
+              className="flex items-center gap-2 text-slate-700 hover:text-blue-600 transition-colors font-medium"
+            >
+              <Phone className="w-4 h-4" />
+              (682) 466-2130
+            </a>
           </div>
           
           {/* Desktop CTA */}

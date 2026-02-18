@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowLeft, Lightbulb, Sun, Moon, Palette, Clock, Smartphone, ChevronDown, Menu, X } from 'lucide-react'
+import { ArrowLeft, Lightbulb, Sun, Moon, Palette, Clock, Smartphone, ChevronDown, Menu, X, Phone } from 'lucide-react'
 import { useState } from 'react'
 
 export default function SmartLightingPage() {
@@ -83,6 +83,13 @@ export default function SmartLightingPage() {
             <Link href="/contact" className="text-slate-700 hover:text-blue-600 transition-colors">
               Contact Us
             </Link>
+            <a 
+              href="tel:+16824662130" 
+              className="flex items-center gap-2 text-slate-700 hover:text-blue-600 transition-colors font-medium"
+            >
+              <Phone className="w-4 h-4" />
+              (682) 466-2130
+            </a>
           </div>
           
           {/* Desktop Get Started Button */}
