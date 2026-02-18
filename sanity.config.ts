@@ -7,8 +7,8 @@ export default defineConfig({
   name: 'default',
   title: 'SmartSpaces DFW',
 
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '',
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
+  projectId: 'ge2haquh',
+  dataset: 'production',
 
   basePath: '/studio',
 

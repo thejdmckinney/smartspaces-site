@@ -1,0 +1,21 @@
+{
+  "version": 3,
+  "createdAt": "2026-02-18T20:21:08.670Z",
+  "workspaces": [
+    {
+      "name": "default",
+      "title": "SmartSpaces DFW",
+      "basePath": "/studio",
+      "projectId": "ge2haquh",
+      "dataset": "production",
+      "icon": null,
+      "mediaLibrary": {
+        "enabled": false,
+        "__internal": {}
+      },
+      "schema": "d31dbdd6.create-schema.json",
+      "tools": "d8640c31.create-tools.json"
+    }
+  ],
+  "studioVersion": "5.10.0"
+}
