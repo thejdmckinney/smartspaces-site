@@ -244,30 +244,13 @@ export default function HomePage() {
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-3xl blur-3xl opacity-20"></div>
-              <div className="relative bg-slate-800/50 backdrop-blur-sm border border-blue-500/30 rounded-3xl p-8">
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="bg-slate-900/50 rounded-2xl p-6 border border-blue-500/20">
-                    <Home className="w-12 h-12 text-blue-400 mb-4" />
-                    <h3 className="text-white font-semibold mb-2">Reliable Systems</h3>
-                    <p className="text-slate-400 text-sm">No more conflicts or crashes</p>
-                  </div>
-                  <div className="bg-slate-900/50 rounded-2xl p-6 border border-cyan-500/20">
-                    <Lightbulb className="w-12 h-12 text-cyan-400 mb-4" />
-                    <h3 className="text-white font-semibold mb-2">True Integration</h3>
-                    <p className="text-slate-400 text-sm">Everything works together</p>
-                  </div>
-                  <div className="bg-slate-900/50 rounded-2xl p-6 border border-purple-500/20">
-                    <Shield className="w-12 h-12 text-purple-400 mb-4" />
-                    <h3 className="text-white font-semibold mb-2">Network Health</h3>
-                    <p className="text-slate-400 text-sm">Strong Wi-Fi foundation</p>
-                  </div>
-                  <div className="bg-slate-900/50 rounded-2xl p-6 border border-emerald-500/20">
-                    <Smartphone className="w-12 h-12 text-emerald-400 mb-4" />
-                    <h3 className="text-white font-semibold mb-2">Ongoing Support</h3>
-                    <p className="text-slate-400 text-sm">We're here when you need us</p>
-                  </div>
-                </div>
-              </div>
+              <Image
+                src="/info-graphic-home-automation.png"
+                alt="Smart Home Automation System Integration"
+                width={600}
+                height={600}
+                className="relative rounded-3xl shadow-2xl"
+              />
             </div>
           </div>
         </div>
