@@ -231,7 +231,7 @@ export default function SecuritySystemsPage() {
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-3xl blur-3xl opacity-20"></div>
               <div className="relative rounded-3xl overflow-hidden">
                 <Image 
-                  src="/smart-spaces-security.png" 
+                  src="/smart-security-ss.png" 
                   alt="Security Systems" 
                   width={600} 
                   height={400}

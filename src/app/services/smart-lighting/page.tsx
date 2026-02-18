@@ -231,7 +231,7 @@ export default function SmartLightingPage() {
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-3xl blur-3xl opacity-20"></div>
               <div className="relative rounded-3xl overflow-hidden">
                 <Image 
-                  src="/smart-spaces-lighting.png" 
+                  src="/smart-lighting-ss.png" 
                   alt="Smart Lighting Systems" 
                   width={600} 
                   height={400}

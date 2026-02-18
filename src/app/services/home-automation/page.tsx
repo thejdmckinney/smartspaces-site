@@ -231,7 +231,7 @@ export default function HomeAutomationPage() {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-3xl blur-3xl opacity-20"></div>
               <div className="relative rounded-3xl overflow-hidden">
                 <Image 
-                  src="/smart-spaces-home-automation.png" 
+                  src="/smart-home-packages-ss.png" 
                   alt="Home Automation Systems" 
                   width={600} 
                   height={400}
