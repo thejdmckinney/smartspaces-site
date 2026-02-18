@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowLeft, Lightbulb, Sun, Moon, Palette, Clock, Smartphone, ChevronDown, Menu, X, Phone } from 'lucide-react'
+import { ArrowLeft, Lightbulb, Sun, Moon, Palette, Clock, Smartphone, ChevronDown, Menu, X, Phone , MapPin, Mail, Facebook, Instagram, BadgeCheck} from 'lucide-react'
 import { useState } from 'react'
 
 export default function SmartLightingPage() {
@@ -357,28 +357,200 @@ export default function SmartLightingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-blue-500/20 py-12 px-6">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <Image 
-              src="/new-smartspaces-logo.png" 
-              alt="SmartSpaces DFW Logo" 
-              width={60} 
-              height={60}
-              className="object-contain"
-            />
-            <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              SmartSpaces DFW
+      <footer className="border-t border-blue-500/20 bg-slate-950/50 py-16 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+            {/* NAP Information */}
+            <div className="lg:col-span-1">
+              <div className="flex items-center gap-3 mb-4">
+                <Image 
+                  src="/new-smartspaces-logo.png" 
+                  alt="SmartSpaces DFW Logo" 
+                  width={50} 
+                  height={50}
+                  className="object-contain"
+                />
+              </div>
+              <h3 className="text-white font-bold text-lg mb-4">SmartSpaces DFW</h3>
+              <div className="space-y-3 text-slate-400 text-sm">
+                <a 
+                  href="https://maps.google.com/?q=1122+Spanish+Moss+Dr,+Garland,+TX+75040"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2 hover:text-blue-400 transition-colors"
+                >
+                  <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                  <span>1122 Spanish Moss Dr<br />Garland, TX 75040</span>
+                </a>
+                <a 
+                  href="tel:+16824662130" 
+                  className="flex items-center gap-2 hover:text-blue-400 transition-colors"
+                >
+                  <Phone className="w-4 h-4 flex-shrink-0" />
+                  (682) 466-2130
+                </a>
+                <a 
+                  href="mailto:info@smartspacesdfw.com" 
+                  className="flex items-center gap-2 hover:text-blue-400 transition-colors"
+                >
+                  <Mail className="w-4 h-4 flex-shrink-0" />
+                  info@smartspacesdfw.com
+                </a>
+                <div className="flex items-center gap-2 mt-4">
+                  <BadgeCheck className="w-5 h-5 text-blue-400" />
+                  <span className="text-xs">Fully Insured</span>
+                </div>
+                <p className="text-xs text-slate-500">In business since 2024</p>
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h3 className="text-white font-bold mb-4">Quick Links</h3>
+              <ul className="space-y-2 text-slate-400 text-sm">
+                <li>
+                  <Link href="/" className="hover:text-blue-400 transition-colors">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/pricing" className="hover:text-blue-400 transition-colors">
+                    Pricing
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/products" className="hover:text-blue-400 transition-colors">
+                    Products
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="hover:text-blue-400 transition-colors">
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Services */}
+            <div>
+              <h3 className="text-white font-bold mb-4">Services</h3>
+              <ul className="space-y-2 text-slate-400 text-sm">
+                <li>
+                  <Link href="/services/home-automation" className="hover:text-blue-400 transition-colors">
+                    Home Automation
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services/smart-lighting" className="hover:text-blue-400 transition-colors">
+                    Smart Lighting
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services/security-systems" className="hover:text-blue-400 transition-colors">
+                    Security Systems
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services/integration" className="hover:text-blue-400 transition-colors">
+                    Integration & Network
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services/ev-installation" className="hover:text-blue-400 transition-colors">
+                    EV Charger Installation
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Service Areas */}
+            <div>
+              <h3 className="text-white font-bold mb-4">Service Areas</h3>
+              <ul className="space-y-2 text-slate-400 text-sm">
+                <li>
+                  <Link href="#" className="hover:text-blue-400 transition-colors">
+                    Dallas, TX
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-blue-400 transition-colors">
+                    Fort Worth, TX
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-blue-400 transition-colors">
+                    Arlington, TX
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-blue-400 transition-colors">
+                    Plano, TX
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-blue-400 transition-colors">
+                    Irving, TX
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-blue-400 transition-colors">
+                    Frisco, TX
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-blue-400 transition-colors">
+                    McKinney, TX
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Social & Newsletter */}
+            <div>
+              <h3 className="text-white font-bold mb-4">Connect With Us</h3>
+              <div className="flex gap-4 mb-6">
+                <a 
+                  href="#" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="w-5 h-5 text-white" />
+                </a>
+                <a 
+                  href="#" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="w-5 h-5 text-white" />
+                </a>
+              </div>
+              <p className="text-slate-400 text-sm mb-4">
+                Follow us for smart home tips, project showcases, and special offers.
+              </p>
             </div>
           </div>
-          <p className="text-slate-400 mb-6">
-            Making homes smarter, one installation at a time.
-          </p>
-          <p className="text-slate-500 text-sm">
-            © {new Date().getFullYear()} SmartSpaces DFW. All rights reserved.
-          </p>
+
+          {/* Bottom Bar */}
+          <div className="border-t border-slate-800 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+              <p>© {new Date().getFullYear()} SmartSpaces DFW. All rights reserved.</p>
+              <div className="flex gap-6">
+                <Link href="#" className="hover:text-blue-400 transition-colors">
+                  Privacy Policy
+                </Link>
+                <Link href="#" className="hover:text-blue-400 transition-colors">
+                  Terms of Service
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </footer>
+
     </div>
   )
 }
