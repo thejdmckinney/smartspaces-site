@@ -2,13 +2,44 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Home, Lightbulb, Shield, Smartphone, ChevronDown, Menu, X, Phone, MapPin, Mail, Facebook, Instagram, BadgeCheck } from 'lucide-react'
+import { ArrowRight, Home, Lightbulb, Shield, Smartphone, ChevronDown, Menu, X, Phone, MapPin, Mail, Facebook, Instagram, BadgeCheck, Share2, Download, Maximize2 } from 'lucide-react'
 import { useState } from 'react'
 import Head from 'next/head'
 
 export default function HomePage() {
   const [isServicesOpen, setIsServicesOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isInfographicOpen, setIsInfographicOpen] = useState(false)
+
+  const handleShare = async () => {
+    const shareData = {
+      title: 'Smart Home Automation System - SmartSpaces DFW',
+      text: 'Check out this comprehensive guide to smart home automation systems!',
+      url: window.location.href
+    }
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData)
+      } else {
+        // Fallback: copy link to clipboard
+        await navigator.clipboard.writeText(window.location.href)
+        alert('Link copied to clipboard!')
+      }
+    } catch (err) {
+      console.log('Error sharing:', err)
+    }
+  }
+
+  const handleDownload = () => {
+    const link = document.createElement('a')
+    link.href = '/info-graphic-home-automation.png'
+    link.download = 'smart-home-automation-guide.png'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
     <>
       <Head>
@@ -242,19 +273,95 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-3xl blur-3xl opacity-20"></div>
-              <Image
-                src="/info-graphic-home-automation.png"
-                alt="Smart Home Automation System Integration"
-                width={600}
-                height={600}
-                className="relative rounded-3xl shadow-2xl"
-              />
+              <div className="relative">
+                <div 
+                  className="cursor-pointer relative overflow-hidden rounded-3xl"
+                  onClick={() => setIsInfographicOpen(true)}
+                >
+                  <Image
+                    src="/info-graphic-home-automation.png"
+                    alt="Smart Home Automation System Integration"
+                    width={600}
+                    height={600}
+                    className="relative rounded-3xl shadow-2xl transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                    <Maximize2 className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                </div>
+                
+                {/* Action Buttons */}
+                <div className="absolute top-4 right-4 flex gap-2">
+                  <button
+                    onClick={handleShare}
+                    className="p-3 bg-slate-900/80 backdrop-blur-sm border border-blue-500/30 rounded-full text-white hover:bg-slate-800 transition-all shadow-lg"
+                    aria-label="Share infographic"
+                  >
+                    <Share2 className="w-5 h-5" />
+                  </button>
+                  <button
+                    onClick={handleDownload}
+                    className="p-3 bg-slate-900/80 backdrop-blur-sm border border-blue-500/30 rounded-full text-white hover:bg-slate-800 transition-all shadow-lg"
+                    aria-label="Download infographic"
+                  >
+                    <Download className="w-5 h-5" />
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Infographic Modal */}
+      {isInfographicOpen && (
+        <div 
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+          onClick={() => setIsInfographicOpen(false)}
+        >
+          <div className="relative max-w-6xl w-full">
+            <button
+              onClick={() => setIsInfographicOpen(false)}
+              className="absolute -top-12 right-0 p-2 text-white hover:text-blue-400 transition-colors"
+              aria-label="Close"
+            >
+              <X className="w-8 h-8" />
+            </button>
+            <div className="flex gap-4 absolute -top-12 left-0">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation()
+                  handleShare()
+                }}
+                className="p-2 bg-slate-900/80 backdrop-blur-sm border border-blue-500/30 rounded-lg text-white hover:bg-slate-800 transition-all flex items-center gap-2"
+              >
+                <Share2 className="w-5 h-5" />
+                <span className="text-sm">Share</span>
+              </button>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation()
+                  handleDownload()
+                }}
+                className="p-2 bg-slate-900/80 backdrop-blur-sm border border-blue-500/30 rounded-lg text-white hover:bg-slate-800 transition-all flex items-center gap-2"
+              >
+                <Download className="w-5 h-5" />
+                <span className="text-sm">Download</span>
+              </button>
+            </div>
+            <Image
+              src="/info-graphic-home-automation.png"
+              alt="Smart Home Automation System Integration"
+              width={1200}
+              height={1200}
+              className="rounded-2xl shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        </div>
+      )}
 
       {/* Features Section */}
       <section id="services" className="py-20 px-6">
