@@ -76,6 +76,12 @@ export default function HomePage() {
                     >
                       EV Installation
                     </Link>
+                    <Link 
+                      href="/services/smart-outlets-switches" 
+                      className="block px-6 py-3 text-slate-700 hover:text-blue-600 hover:bg-slate-50 transition-colors"
+                    >
+                      Smart Outlets & Switches
+                    </Link>
                   </div>
                 </div>
               )}
@@ -163,6 +169,13 @@ export default function HomePage() {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   EV Installation
+                </Link>
+                <Link 
+                  href="/services/smart-outlets-switches" 
+                  className="block px-4 py-3 text-slate-700 hover:text-blue-600 hover:bg-slate-800/30 rounded-lg transition-colors text-sm"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Smart Outlets & Switches
                 </Link>
               </div>
               <Link 
@@ -467,6 +480,11 @@ export default function HomePage() {
                 <li>
                   <Link href="/services/ev-installation" className="hover:text-blue-400 transition-colors">
                     EV Charger Installation
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services/smart-outlets-switches" className="hover:text-blue-400 transition-colors">
+                    Smart Outlets & Switches
                   </Link>
                 </li>
               </ul>

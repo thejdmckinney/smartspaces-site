@@ -460,7 +460,12 @@ export default function SmartLightingPage() {
                     EV Charger Installation
                   </Link>
                 </li>
-              </ul>
+                              <li>
+                  <Link href="/services/smart-outlets-switches" className="hover:text-blue-400 transition-colors">
+                    Smart Outlets & Switches
+                  </Link>
+                </li>
+</ul>
             </div>
 
             {/* Service Areas */}
